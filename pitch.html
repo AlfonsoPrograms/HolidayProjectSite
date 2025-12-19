@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<!--
+  pitch.html
+  Locked pitch page: content is intentionally rendered as static HTML so viewers cannot edit it in-browser.
+
+  To update the pitch video:
+  - Replace the `src` attribute on the <video id="pitchVideo"> element below with your video file path (e.g. "assets/pitch.mp4").
+  - Put the video file in the same folder (or adjust the path accordingly).
+
+  To update the textual pitch content:
+  - Edit the HTML in this file where indicated by the comments below (search for "EDIT HERE").
+  - This file should be edited in your text editor, not in the browser.
+-->
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Project Pitch</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="./Favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./Favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./Favicons/favicon-16x16.png">
+    <link rel="manifest" href="./Favicons/site.webmanifest">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0;
+            font-family: Inter, Arial, Helvetica, sans-serif;
+            background: #f6f8fb;
+            color: #071022
+        }
+
+        .main-header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            font-family: 'Inter', sans-serif;
+            font-weight: 900;
+        }
+
+        .navbar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            color: white;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: bold;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .logo:hover {
+            color: #4CAF50
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 5px 0;
+            position: relative;
+            transition: color .3s ease-in-out
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            display: block;
+            margin-top: 5px;
+            right: 0;
+            background: #4CAF50;
+            transition: width .3s ease-in-out, right .3s ease-in-out
+        }
+
+        .nav-link:hover {
+            color: #4CAF50
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+            right: auto;
+            left: 0
+        }
+
+        .page {
+            max-width: 1000px;
+            margin: 100px auto;
+            padding: 20px
+        }
+
+        .pitch-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 18px;
+            box-shadow: 0 12px 30px rgba(9, 18, 34, 0.06)
+        }
+
+        .video-wrap {
+            background: #000;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 420px
+        }
+
+        .video-wrap video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover
+        }
+
+        .meta {
+            color: #334155;
+            margin-top: 10px
+        }
+
+        .notes {
+            margin-top: 18px;
+            color: #334155;
+            line-height: 1.5
+        }
+
+        .return-home {
+            position: fixed;
+            right: 18px;
+            bottom: 18px;
+            z-index: 1400;
+            background: #0b63ff;
+            color: #fff;
+            padding: 10px 12px;
+            border-radius: 10px;
+            text-decoration: none;
+            box-shadow: 0 12px 30px rgba(11, 22, 60, 0.12);
+            transition: transform .18s ease
+        }
+
+        .return-home:hover {
+            transform: translateY(-6px)
+        }
+    </style>
+</head>
+
+<body>
+    <header class="main-header">
+        <nav class="navbar-container">
+            <a href="./index.html" class="logo">Holiday Project</a>
+            <ul class="nav-links">
+                <li><a href="./index.html" class="nav-link">Home</a></li>
+                <li><a href="./3dmodel.html" class="nav-link">Model</a></li>
+                <li><a href="./pitch.html" class="nav-link">Pitch</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="page">
+        <div class="pitch-card">
+            <h1><!-- EDIT HERE: Change title text -->Project Pitch</h1>
+            <p class="meta">
+                <!-- EDIT HERE: Change short description --><!-- Leave this static, edit the file to change text -->This
+                page contains the official project pitch video and notes.
+            </p>
+
+            <div class="video-wrap" id="videoWrap">
+                <!-- STATIC VIDEO: To update, replace the `src` below with your file path (for example "assets/pitch.mp4"). -->
+                <!-- EDIT HERE: Change the `src` attribute to your final video file. Also replace or add a poster image at assets/pitch-poster.jpg for a visible placeholder. -->
+                <video id="pitchVideo" controls playsinline muted preload="metadata" src="./assets/pitch.mp4"
+                    poster="assets/pitch-poster.jpg">
+                    <!-- If browser doesn't support video, show fallback message -->
+                    Your browser does not support the video element.
+                </video>
+            </div>
+
+            <section class="notes">
+                <h3><!-- EDIT HERE: Change heading -->Pitch Notes</h3>
+                <!-- EDIT HERE: Replace the paragraphs below with your final pitch copy. -->
+                <p>Key points:</p>
+                <ul>
+                    <li>What problem we solve</li>
+                    <li>Recycling ability</li>
+                    <li>How the model supports the pitch</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <!-- Important: This page is intentionally static. Remove any editor controls to keep content uneditable in-browser. -->
+    <!-- visible return-home button for viewers when finished -->
+    <div class="return-help">When finished viewing, click "Return Home" to return to the main menu.</div>
+    <a class="return-home" href="./index.html">Return Home</a>
+</body>
+
+</html>
